@@ -21,4 +21,4 @@ main
 # system ignore
 .DS_Store
 Thumbs.db
-config/*
+conf/*.conf

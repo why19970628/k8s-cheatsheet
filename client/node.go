@@ -18,7 +18,7 @@ func main() {
 		panic(err)
 	}
 
-	// kubernetes.NewForConfig用于生成kubernetes.Clientset
+	// kubernetes.NewForConfig用于生成kubernetes.Clients
 	clientset, err := kubernetes.NewForConfig(config)
 	utils.HandlerCheck(err)
 	//
@@ -43,7 +43,7 @@ func main() {
 	}
 }
 
-//var clientset *kubernetes.Clientset
+//var clientset *kubernetes.Clients
 //
 //func kubeInitOutCluster() error {
 //	kubeconfig := "C:\\config"
