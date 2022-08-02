@@ -1,4 +1,4 @@
-package main
+package deployment
 
 import (
 	"context"
@@ -11,7 +11,7 @@ import (
 	"k8s.io/client-go/tools/clientcmd"
 )
 
-func main() {
+func main6() {
 	// tools/clientcmd工具用于生成rest.Config
 	config, err := clientcmd.BuildConfigFromFlags("", "C:\\config")
 	if err != nil {

@@ -1,4 +1,4 @@
-package main
+package deployment
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 	"k8s.io/client-go/tools/clientcmd"
 )
 
-func main() {
+func main4() {
 	config, err := clientcmd.BuildConfigFromFlags("", "C:\\config")
 	if err != nil {
 		panic(err)

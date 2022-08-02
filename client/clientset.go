@@ -1,18 +1,17 @@
-package main
+package client
 
 import (
-	"k8s-cheat/conf"
+	"github.com/why19970628/k8s-cheatsheet/conf"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/clientcmd"
 )
 
-
-var Clientset *kubernetes.Clientset
-
-
-
-func kubeInitOutCluster()  {
-	config, err := clientcmd.BuildConfigFromFlags("", conf.KubeConfigPath)
+func NewKubeClient(configPath string) *kubernetes.Clientset {
+	// config/kube.conf
+	if len(configPath) == 0 {
+		configPath = conf.KubeDefaultConfigPath
+	}
+	config, err := clientcmd.BuildConfigFromFlags("", configPath)
 	if err != nil {
 		panic(err)
 	}
@@ -21,5 +20,5 @@ func kubeInitOutCluster()  {
 	if err != nil {
 		panic(err)
 	}
-	Clientset = clientset
+	return clientset
 }
